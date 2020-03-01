@@ -1,4 +1,3 @@
-
 const Joc = (tipusP, numP) => {	
 	this.tipusPreguntes = tipusP;
 	this.numPreguntes = numP != undefined ? numP : -1;
@@ -12,7 +11,7 @@ const Joc = (tipusP, numP) => {
 	};
 
 	this.comencaJoc = () => {
-		mostraMenu();
+		this.mostraMenu();
 	};
 
 	this.getMenuItem = item => {
@@ -26,7 +25,7 @@ const Joc = (tipusP, numP) => {
 				g.setFontBitmap();
 				g.drawString('Prem BTN3 per reiniciar', 15, 40);
 				g.flip();
-				setWatch(comencaJoc, BTN3);
+				setWatch(this.comencaJoc, BTN3);
 			};
 		return function () {
 			mostraMenu(item);

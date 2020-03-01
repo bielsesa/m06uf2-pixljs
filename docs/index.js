@@ -24,6 +24,9 @@ window.onload = () => {
             connection = undefined;
         }
 
+        $('#start').addClass('invisible');
+        $('#game').removeClass('invisible');
+
         Puck.connect(c => {
             if (!c) {
                 alert(`No s'ha pogut establir la connexió!`);
@@ -75,4 +78,15 @@ window.onload = () => {
             }
         });
     };
+
+    $('#bt-stop').click(() => {
+        if (connection) {
+            connection.close();
+            connection = undefined;
+        }
+
+        window.alert(`S'ha parat el joc i desconnectat del dispositiu!`);        
+        $('#game').addClass('invisible');
+        $('#start').removeClass('invisible');
+    })
 };
