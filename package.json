@@ -1,0 +1,25 @@
+{
+  "name": "m06uf2-pixljs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bielsesa/m06uf2-pixljs.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bielsesa/m06uf2-pixljs/issues"
+  },
+  "homepage": "https://github.com/bielsesa/m06uf2-pixljs#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
