@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.addEventListener('load', () => {
+            var punt = {
+                x: 1,
+                y: 2
+            };
+            // => 1
+            // => 2
+            console.log(punt.x);
+            console.log(punt.y);
+            // crea un nou objecte on punt és el prototipus i hereta tot el seu comportament.
+            punt3D = Object.create(punt);
+            punt3D.z = 0;
+
+            // => 1
+            // => 2
+            // => 0
+            console.log(punt3D.x);
+            console.log(punt3D.y);
+            console.log(punt3D.z);
+        })
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
