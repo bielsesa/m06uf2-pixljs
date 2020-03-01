@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.addEventListener('load',()=>{
+            //EJEMPLO EN EL INPUT= return 1+1;
+            var text;
+            var f;
+            document.getElementById('btn').addEventListener('click',()=>{
+                text=document.getElementById('texto').value;
+                f= new Function(text);
+                document.body.innerHTML += f();
+                console.log(f());
+            });
+
+        })
+    </script>
+</head>
+<body>
+    <input type="text" id="texto">
+    <button id="btn">Clickame</button>
+</body>
+</html>
