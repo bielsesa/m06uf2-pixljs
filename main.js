@@ -1,6 +1,21 @@
-const joc = {
 
-	getMenuItem = item => {
+const Joc = (tipusP, numP) => {	
+	this.tipusPreguntes = tipusP;
+	this.numPreguntes = numP != undefined ? numP : -1;
+
+	this.mostraMenu = () => {
+		const menu = {
+			'': { title: '-= TRIVIADOS =-' },
+		};
+		// for (const i in items) menu[i] = getMenuItem(items[i]);
+		Pixl.menu(menu);
+	};
+
+	this.comencaJoc = () => {
+		mostraMenu();
+	};
+
+	this.getMenuItem = item => {
 		if (typeof item === 'string' && item == 'gameover')
 			return function () {
 				Pixl.menu(); // disable menu
@@ -16,26 +31,18 @@ const joc = {
 		return function () {
 			mostraMenu(item);
 		};
-	},
-	mostraMenu = items => {
-		const menu = {
-			'': { title: '-= TRIVIADOS =-' },
-		};
-		for (const i in items) menu[i] = getMenuItem(items[i]);
-		Pixl.menu(menu);
-	},
-	comencaJoc = () => {
-		mostraMenu(tree);
-	},
-	mostraTitol = () => {
+	};
+
+	this.mostraTitol = () => {
 		g.clear();
 		g.setFontBitmap();
 		g.drawString("Prem BTN3 per jugar");
-		g.setFontVector(40);
+		g.setFontVector(30);
 		g.drawString('TRIVIA', (g.getWidth()-g.stringWidth('TRIVIA'))/2,10);
 		g.flip();
-		setWatch(comencaJoc, BTN3);
-	}
+		setWatch(this.comencaJoc, BTN3);
+	};
 };
-
+console.log(`Tipus preguntes: ${tipusPreguntes}`);
+const joc = new Joc(tipusPreguntes, );
 joc.mostraTitol();

@@ -4,7 +4,7 @@ window.onload = () => {
     const startButton = document.getElementById('bt-start');
     let connection;
     let codi;
-    let tipusPreguntes;
+    let tipusPreguntes, numPreguntes;
 
     tipusPreguntesFix.addEventListener('click', () => {
         document.getElementById('num-preguntes').removeAttribute('disabled');
@@ -43,21 +43,30 @@ window.onload = () => {
             });
 
             console.log(`tipusPreguntes = ${tipusPreguntes}`);
-            connection.write(`const tipusPreguntes = '${tipusPreguntes}';`)
+            connection.write(`
+                reset(); 
+                g.clear();
+                const tipusPreguntes = '${tipusPreguntes}';
+                const numPreguntes = ${numPreguntes};`)            
             connection.write(codi, () => { console.log('Codi enviat a Pixljs...'); }
             );
         });
     }
 
     startButton.onclick = () => {
-        if ($('#preguntes-fixed').is(':checked')) { tipusPreguntes = "fix"; }
-        else { tipusPreguntes = "infinite"; }
+        if ($('#preguntes-fixed').is(':checked')) { 
+            tipusPreguntes = "fix"; 
+            numPreguntes = $('#num-preguntes').val();
+        } else { 
+            tipusPreguntes = "infinite"; 
+            numPreguntes = undefined;
+        }
 
         $.ajax({
             url: '/pixljs/main',
             type: 'GET',
             complete: (result, status, xhr) => {
-                codi = this.response;
+                codi = result.responseText;
                 console.log('Rebut codi del servidor:\n%o', codi);
                 connect();
             },
