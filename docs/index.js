@@ -1,7 +1,16 @@
 window.onload = () => {
     const tipusPreguntesFix = document.getElementById('preguntes-fixed');
     const tipusPreguntesInfinite = document.getElementById('preguntes-infinite');
-    const startButton = document.getElementById('bt-start');
+
+    // variables IndexedDB
+    const DB_VERSION = 19;
+    window.indexedDB = window.indexedDB || window.mozIndexedDB || window.webkitIndexedDB || window.msIndexedDB;
+    window.IDBTransaction = window.IDBTransaction || window.webkitIDBTransaction || window.msIDBTransaction || {
+        READ_WRITE: "readwrite"
+    };
+    window.IDBKeyRange = window.IDBKeyRange || window.webkitIDBKeyRange || window.msIDBKeyRange;
+
+    // variables per pasar info a Pixl.js
     let connection;
     let codi;
     let tipusPreguntes, numPreguntes;
@@ -50,18 +59,18 @@ window.onload = () => {
                 reset(); 
                 g.clear();
                 const tipusPreguntes = '${tipusPreguntes}';
-                const numPreguntes = ${numPreguntes};`)            
+                const numPreguntes = ${numPreguntes};`)
             connection.write(codi, () => { console.log('Codi enviat a Pixljs...'); }
             );
         });
     }
 
-    startButton.onclick = () => {
-        if ($('#preguntes-fixed').is(':checked')) { 
-            tipusPreguntes = "fix"; 
+    $('#bt-start').click(() => {
+        if ($('#preguntes-fixed').is(':checked')) {
+            tipusPreguntes = "fix";
             numPreguntes = $('#num-preguntes').val();
-        } else { 
-            tipusPreguntes = "infinite"; 
+        } else {
+            tipusPreguntes = "infinite";
             numPreguntes = undefined;
         }
 
@@ -77,7 +86,7 @@ window.onload = () => {
                 console.log(`Hi ha hagut un error: ${err}`);
             }
         });
-    };
+    });
 
     $('#bt-stop').click(() => {
         if (connection) {
@@ -85,8 +94,8 @@ window.onload = () => {
             connection = undefined;
         }
 
-        window.alert(`S'ha parat el joc i desconnectat del dispositiu!`);        
+        window.alert(`S'ha parat el joc i desconnectat del dispositiu!`);
         $('#game').addClass('invisible');
         $('#start').removeClass('invisible');
-    })
+    });
 };

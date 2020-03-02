@@ -1,0 +1,62 @@
+[
+  {
+    "pregunta": "¿Cual es el pais menos turistico de Europa?",
+    "resposta": "Liechtenstein",
+    "incorrectes": "Armenia,Moldavia,Hungria"
+  },
+  {
+    "pregunta": "¿A que pais pertenece la isla de Tasmania?",
+    "resposta": "Australia",
+    "incorrectes": "Estados Unidos,Portugal,Ninguna"
+  },
+  {
+    "pregunta": "¿De donde es Katy Perry?",
+    "resposta": "California",
+    "incorrectes": "España,"
+  },
+  {
+    "pregunta": "¿Cuales son los efectos de la prolactina?",
+    "resposta": "Produccion de leche",
+    "incorrectes": "Produccion de vitamina D,Muerte,Insomnio"
+  },
+  {
+    "pregunta": "¿Quien pinto galatea de las esferas?",
+    "resposta": "Salvador Dali",
+    "incorrectes": "Picasso,Van Gogh,Monet"
+  },
+  {
+    "pregunta": "¿Quien fue el cartografo de Colon?",
+    "resposta": "Juan de la Cosa",
+    "incorrectes": "Carlos de Santiago,Jesus del Arroyo,Victor Sanchez"
+  },
+  {
+    "pregunta": "¿Cuantos dedos tienen en la mano los personajes de Los Simpsons?",
+    "resposta": "4",
+    "incorrectes": "5,7,3"
+  },
+  {
+    "pregunta": "¿Cual es el hueso mas fuerte del craneo?",
+    "resposta": "Hueso Frontal",
+    "incorrectes": "Hueso Occipital,Huesos temporales,Esfenoides"
+  },
+  {
+    "pregunta": "¿Que mujercita muere en la novela de Louisa May Alcott?",
+    "resposta": "Beth",
+    "incorrectes": "Amy,Margaret,Josephine"
+  },
+  {
+    "pregunta": "¿Cuantos jugadores titulares forman un equipo de beisbol?",
+    "resposta": "9",
+    "incorrectes": "7,11,5"
+  },
+  {
+    "pregunta": "¿Donde nació el lateral Roberto Carlos?",
+    "resposta": "Brasil",
+    "incorrectes": "Estados Unidos,Mexico,Portugal"
+  },
+  {
+    "pregunta": "¿Cuál es el símbolo del Sodio?",
+    "resposta": "Na",
+    "incorrectes": "He,K,Hf"
+  }
+]
