@@ -23,12 +23,19 @@
         margin: 0.9375em;
       }
 
-      input[type="number"] {
+      input[type='number'] {
         width: 40px;
       }
 
-      .invisible {
-        visibility: collapse;
+      #result {
+        margin-left: 10px;
+        padding: 2px;
+        border: 2px rgb(51, 197, 51) solid;
+        border-radius: 10%;
+        color: rgb(16, 63, 16);
+        background-color: rgba(51, 197, 51, 0.473);
+        font-weight: bold;
+        font-size: medium;
       }
     </style>
   </head>
@@ -51,17 +58,32 @@
       />
       <label for="preguntes-fixed">Vull un nombre de preguntes definit:</label>
       <input type="number" id="num-preguntes" min="1" max="30" disabled /><br />
-      <button id="bt-start">START!</button>
+      <button type="button" class="btn btn-dark" id="bt-start">START!</button>
+      <div id="scores">
+        <hr />
+        <table id="tb-scores" class="table">
+          <thead>
+            <th scope="col">Data i hora</th>
+            <th scope="col">Puntuació</th>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
     </div>
-    <div id="game" class="invisible">
+    <div id="game">
       <h2>El joc ha començat al dispositiu...</h2>
       <p>Un cop acabi la partida, els resultats es rebran i mostraran aquí.</p>
-      <button id="bt-stop">STOP</button>
+      <button type="button" class="btn btn-dark" id="bt-stop">STOP</button>
+      <button type="button" class="btn btn-dark" id="bt-end">
+        (Debug) END
+      </button>
     </div>
-    <div id="end" class="invisible">
+    <div id="end">
       <h2>S'ha acabat la partida!</h2>
-      <p>El resultat és el següent:</p>
-      <p id="result"></p>
+      <p>La teva puntuació ha sigut:<span id="result"></span></p>
+      <button type="button" class="btn btn-dark" id="bt-restart">
+        Tornar a l'inici
+      </button>
     </div>
   </body>
   <script
