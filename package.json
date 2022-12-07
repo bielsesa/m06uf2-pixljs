@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/bielsesa/m06uf2-pixljs#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.18.2"
   },
   "devDependencies": {
     "jsdoc": "^3.6.3"
